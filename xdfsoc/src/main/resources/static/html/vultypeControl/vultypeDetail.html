@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>漏洞词条信息修改页</title>
+    <link rel="stylesheet" href="../../../layui/css/layui.css">
+</head>
+<body>
+
+<div class="layui-form-item" style="margin-top: 10px">
+    <form class="layui-form" action="" id="vultypeForm">
+        <div class="layui-form-item">
+            <label class="layui-form-label">编号</label>
+            <div class="layui-input-inline">
+                <input type="text" name="id" id="id" disabled lay-verify="required" placeholder="编号" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">漏洞名称</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="vulName" id="vulName" disabled lay-verify="required" placeholder="漏洞名称" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">漏洞描述</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="vulDesc" id="vulDesc" disabled lay-verify="required" placeholder="漏洞描述" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-inline">
+            	<label class="layui-form-label">修复方案</label>
+           		<div class="layui-input-inline" style="width: 514px">
+                	<input type="text" name="vulRes" id="vulRes" disabled lay-verify="required" placeholder="修复方案" autocomplete="off" class="layui-input">
+            	</div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button type="button" class="layui-btn layui-btn-radius" lay-submit lay-filter="goToMod" id="goToMod">修改</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script src="../../../layui/layui.js"></script>
+<script src="../../../js/nginx.js"></script>
+<script src="../../../js/vultypeControl/vultypeDetail.js"></script>
+</body>
+</html>
