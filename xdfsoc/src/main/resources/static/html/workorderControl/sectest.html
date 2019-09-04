@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>添加测试申请</title>
+<link rel="stylesheet" href="../../../layui/css/layui.css">
+<link rel="stylesheet" href="../../../css/admin.css">
+</head>
+<body>
+
+	<div class="layui-form-item" style="margin-top: 20px">
+		<form class="layui-form" action="" id="createWorkOrder">	
+		
+			<div class="layui-form-item">
+			  <div class="layui-inline">
+				<label class="layui-form-label required" ><em class="dotRed">*</em>申请者<em class="dotRed">*</em>：</label>
+				<div class="layui-input-inline">
+					<input type="text" id="applyer" name="applyer" lay-verify="required" placeholder="申请人姓名"  autocomplete="off"
+						class="layui-input">
+				</div>
+			  </div>
+			  <div class="layui-inline">
+			  	<label class="layui-form-label"><em class="dotRed">*</em>所属部门<em class="dotRed">*</em>：</label>
+					<div class="layui-input-inline">
+						<input type="text" id="department" name="department" required autocomplete="off" lay-verify="required" placeholder="请输入部门名称" class="layui-input">
+					</div>
+			   </div>
+			   <div class="layui-inline">
+			   	 	<label class="layui-form-label">业务线：</label>
+					<div class="layui-input-inline">
+						<input type="text" id="bizLine" name="bizLine" autocomplete="off" placeholder="请输入业务线" class="layui-input">
+					</div>
+			   </div>			  
+			 </div>
+
+			<div class="layui-form-item">
+				<label class="layui-form-label">优先级：<em></em></label>
+				<div class="layui-input-inline">
+    				<select name="priority" id="priority">
+       					 <option value="">请选择需求优先级</option>
+       					 <option value="1">低</option>
+       					 <option value="2">中</option>
+       					 <option value="3">高</option>
+   					 </select>
+				</div>
+				<div class="layui-inline">
+					<label class="layui-form-label"><em class="dotRed">*</em>系统名称<em class="dotRed">*</em>：</label>
+					<div class="layui-input-inline">
+						<input type="text" id="appName" name="appName" lay-verify="required" placeholder="请输入系统名称" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-inline">
+					<label class="layui-form-label"><em class="dotRed">*</em>测试地址<em class="dotRed">*</em>：</label>
+					<div class="layui-input-inline">
+						<input type="text" id="link" name="link" required placeholder="请输入待测系统URL或IP" lay-verify="required" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+			</div>
+	<div class="layui-form-item">			
+				<div class="layui-inline">
+					<label class="layui-form-label"><em class="dotRed">*</em>开发框架<em class="dotRed">*</em>：</label>
+					<div class="layui-input-inline">
+						<input type="text" id="framework" name="framework" lay-verify="required" placeholder="系统使用开发框架如ThinkPHP、SpringBoot及版本" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-inline">
+					<label class="layui-form-label"><em class="dotRed">*</em>中间件<em class="dotRed">*</em>：</label>
+					<div class="layui-input-inline">
+						<input type="text" id="middleware" name="middleware" lay-verify="required" placeholder="系统中间件如Nginx等" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-inline">
+					<label class="layui-form-label"><em class="dotRed">*</em>数据库<em class="dotRed">*</em>：</label>
+					<div class="layui-input-inline">
+						<input type="text" id="db" name="db" lay-verify="required" placeholder="请输入开发负责人邮箱"  class="layui-input">
+					</div>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label"><em class="dotRed">*</em>系统介绍<em class="dotRed">*</em>：</label>
+				<div class="layui-inline">
+					<div class="layui-textarea-block">
+						<textarea id="appInfo" name="appInfo" lay-verify="required" placeholder="请简述系统功能、接口链接。。。" autocomplete="off" class="layui-textarea" rows="3" cols="130"></textarea>
+					</div>
+				</div>
+			</div>
+			
+			<div class="layui-form-item" style="margin-left: 120px">
+			  <div class="layui-inline">
+			  	<button type="button" class="layui-btn" id="test1"> <i class="layui-icon">&#xe67c;</i>上传附件</button>
+			  </div>
+			  <div class="layui-inline">
+				<label class="layui-form-label" style="width: 100px;">期望结束日期：</label>
+				<div class="layui-input-inline">
+					<input type="text" name="expectedTime" id="expectedTime" class="layui-input dateIcon" placeholder="请选择期望时间" />
+				</div>
+			 </div>
+			 <div class="layui-inline">
+				<label class="layui-form-label">抄送：</label>
+				<div class="layui-input-inline">
+					<input type="text" name="ccEmail" id="ccEmail"  placeholder="请输入抄送人邮箱" class="layui-input" />
+				</div>
+			 </div>
+			</div>
+			<div class="layui-form-item layui-form-text">
+				<label class="layui-form-label">备注：</label>
+				<div class="layui-input-block">
+					<input type="text" name="remarks" id="remarks" class="layui-input" style="width: 840px;"/>
+				</div>
+				
+				
+			</div>
+	
+			<!--  
+          <div class="layui-form-item">
+            <label class="layui-form-label">是否需要权限测试</label>
+            <div class="layui-input-inline">
+                <input type="radio" name="isRite" id="isRite" class="layui-radio" />
+            </div>
+          </div>
+        -->
+			<div class="layui-form-item">
+				<div class="layui-input-block">
+					<button type="button" class="layui-btn" lay-submit lay-filter="addManageFee" id="createWorkOrder">提交</button>
+					<button type="reset" id="resetForm" class="layui-btn layui-btn-primary">重置</button>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<script src="../../../layui/layui.js"></script>
+	<script src="../../../js/jquery/jquery-3.3.1.js"></script>
+
+	<script src="../../../js/nginx.js"></script>
+	<!-- <script src="../../../js/checkControl/expend/manageFee.js"></script> -->
+
+</body>
+</html>
